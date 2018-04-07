@@ -11,7 +11,21 @@ import Foundation
 
 class InfoViewModel {
     
+    let getSettingsInfoUseCase: GetSettingsInfoUseCase
+    
+    var onInfoLoaded: ((SettingsInfo) -> ())?
+    
+    init(getSettingsInfoUseCase: GetSettingsInfoUseCase) {
+        self.getSettingsInfoUseCase = getSettingsInfoUseCase
+    }
     
     
+    func setup() {
+        
+        getSettingsInfoUseCase.execute { [weak self] info in
+            self?.onInfoLoaded?(info)
+        }
+        
+    }
     
 }

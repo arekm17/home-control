@@ -39,7 +39,7 @@ class MainViewController: UIViewController {
         setupView()
         setupConstraints()
         
-        
+        setupBindings()
     }
     
     func setupView() {
@@ -71,6 +71,10 @@ class MainViewController: UIViewController {
         sectionsTable.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
         sectionsTable.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         sectionsTable.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+    }
+    
+    func setupBindings() {
         
     }
 }

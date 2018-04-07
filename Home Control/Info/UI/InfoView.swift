@@ -47,6 +47,9 @@ class InfoView: UIView {
         
         setupView()
         setupConstraints()
+        setupBindings()
+        
+        self.infoViewModel.setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -95,10 +98,20 @@ class InfoView: UIView {
         softVerLabel.widthAnchor.constraint(equalToConstant: labelW).isActive = true
         
         softVer.translatesAutoresizingMaskIntoConstraints = false
-        softVer.bottomAnchor.constraint(equalTo: softVerLabel.bottomAnchor).isActive = true
-        softVer.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        softVer.leadingAnchor.constraint(equalTo: softVerLabel.trailingAnchor, constant: 10).isActive = true
+        NSLayoutConstraint.activate([
+            softVer.bottomAnchor.constraint(equalTo: softVerLabel.bottomAnchor),
+            softVer.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            softVer.leadingAnchor.constraint(equalTo: softVerLabel.trailingAnchor, constant: 10)
+        ])
 
-        
     }
+    
+    func setupBindings() {
+        infoViewModel.onInfoLoaded = { [weak self] info in
+            self?.serialNo.text = info.serialNumber
+            self?.macAddr.text = info.mac
+            self?.softVer.text = info.softVersion
+        }
+    }
+    
 }

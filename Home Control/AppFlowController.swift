@@ -15,7 +15,8 @@ class AppFlowController {
     
     
     func setup() {
-        let vc = MainViewController(infoViewModel: InfoViewModel())
+        let useCase = GetSettingsInfoUseCase()
+        let vc = MainViewController(infoViewModel: InfoViewModel(getSettingsInfoUseCase: useCase))
         rootViewController.addChildViewController(vc)
     }
     

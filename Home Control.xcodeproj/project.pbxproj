@@ -15,6 +15,13 @@
 		3780F4C920750D3800AFA224 /* UILabel+Constructors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4C820750D3800AFA224 /* UILabel+Constructors.swift */; };
 		3780F4CC2075343100AFA224 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4CB2075343100AFA224 /* InfoViewModel.swift */; };
 		3780F4D02075582B00AFA224 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4CF2075582B00AFA224 /* InfoView.swift */; };
+		3780F4D32075644C00AFA224 /* SettingsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4D22075644C00AFA224 /* SettingsInfo.swift */; };
+		3780F4D6207566EA00AFA224 /* GetSettingsInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4D5207566EA00AFA224 /* GetSettingsInfoUseCase.swift */; };
+		3780F4DC20756C6800AFA224 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4DB20756C6800AFA224 /* Result.swift */; };
+		3780F4DE2079649B00AFA224 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4DD2079649B00AFA224 /* Resource.swift */; };
+		3780F4E0207967DE00AFA224 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4DF207967DE00AFA224 /* WebService.swift */; };
+		3780F4E320796E4D00AFA224 /* SettingsInfoResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4E220796E4C00AFA224 /* SettingsInfoResource.swift */; };
+		3780F4E5207975AC00AFA224 /* ApiUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4E4207975AC00AFA224 /* ApiUrl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,13 @@
 		3780F4C820750D3800AFA224 /* UILabel+Constructors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Constructors.swift"; sourceTree = "<group>"; };
 		3780F4CB2075343100AFA224 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 		3780F4CF2075582B00AFA224 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		3780F4D22075644C00AFA224 /* SettingsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfo.swift; sourceTree = "<group>"; };
+		3780F4D5207566EA00AFA224 /* GetSettingsInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSettingsInfoUseCase.swift; sourceTree = "<group>"; };
+		3780F4DB20756C6800AFA224 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		3780F4DD2079649B00AFA224 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		3780F4DF207967DE00AFA224 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		3780F4E220796E4C00AFA224 /* SettingsInfoResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoResource.swift; sourceTree = "<group>"; };
+		3780F4E4207975AC00AFA224 /* ApiUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,7 @@
 		3780F4AE207505FD00AFA224 /* Home Control */ = {
 			isa = PBXGroup;
 			children = (
+				3780F4D72075682A00AFA224 /* Common */,
 				3780F4CD2075580600AFA224 /* Info */,
 				3780F4C720750D1A00AFA224 /* Extensions */,
 				3780F4C12075063300AFA224 /* Main */,
@@ -107,6 +122,8 @@
 		3780F4CD2075580600AFA224 /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				3780F4E120796D8D00AFA224 /* Infrastructure */,
+				3780F4D12075643F00AFA224 /* Domain */,
 				3780F4CE2075582200AFA224 /* UI */,
 				3780F4CA207533CD00AFA224 /* Presentation */,
 			);
@@ -119,6 +136,50 @@
 				3780F4CF2075582B00AFA224 /* InfoView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		3780F4D12075643F00AFA224 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3780F4D4207566E100AFA224 /* UC */,
+				3780F4D22075644C00AFA224 /* SettingsInfo.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3780F4D4207566E100AFA224 /* UC */ = {
+			isa = PBXGroup;
+			children = (
+				3780F4D5207566EA00AFA224 /* GetSettingsInfoUseCase.swift */,
+			);
+			path = UC;
+			sourceTree = "<group>";
+		};
+		3780F4D72075682A00AFA224 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3780F4D82075683300AFA224 /* API */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3780F4D82075683300AFA224 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3780F4DB20756C6800AFA224 /* Result.swift */,
+				3780F4DD2079649B00AFA224 /* Resource.swift */,
+				3780F4DF207967DE00AFA224 /* WebService.swift */,
+				3780F4E4207975AC00AFA224 /* ApiUrl.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		3780F4E120796D8D00AFA224 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				3780F4E220796E4C00AFA224 /* SettingsInfoResource.swift */,
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,9 +254,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3780F4CC2075343100AFA224 /* InfoViewModel.swift in Sources */,
+				3780F4E0207967DE00AFA224 /* WebService.swift in Sources */,
 				3780F4C620750A6000AFA224 /* AppFlowController.swift in Sources */,
+				3780F4E5207975AC00AFA224 /* ApiUrl.swift in Sources */,
+				3780F4E320796E4D00AFA224 /* SettingsInfoResource.swift in Sources */,
+				3780F4D32075644C00AFA224 /* SettingsInfo.swift in Sources */,
+				3780F4DE2079649B00AFA224 /* Resource.swift in Sources */,
 				3780F4B0207505FD00AFA224 /* AppDelegate.swift in Sources */,
 				3780F4C42075065400AFA224 /* MainViewController.swift in Sources */,
+				3780F4DC20756C6800AFA224 /* Result.swift in Sources */,
+				3780F4D6207566EA00AFA224 /* GetSettingsInfoUseCase.swift in Sources */,
 				3780F4D02075582B00AFA224 /* InfoView.swift in Sources */,
 				3780F4C920750D3800AFA224 /* UILabel+Constructors.swift in Sources */,
 			);
