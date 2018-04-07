@@ -12,7 +12,14 @@ struct WebService<T> {
         
     static func getResource(_ resource: Resource<T>, _ completion: @escaping ((Result<T>) -> ())) {
 
-        let task = URLSession.shared.dataTask(with: resource.url) { (data, response, error) -> Void in
+        let config = URLSessionConfiguration.default
+        let userPasswordString = "admin:admin"
+        let userPasswordData = userPasswordString.data(using: .utf8)
+        let base64EncodedCredential = userPasswordData!.base64EncodedString()
+        let authString = "Basic \(base64EncodedCredential)"
+        config.httpAdditionalHeaders = ["Authorization" : authString]
+        
+        let task = URLSession(configuration: config).dataTask(with: resource.url) { (data, response, error) -> Void in
             if let error = error {
                 print("WebService call \(resource.url) error: \(error)")
                 completion(Result.Error(error))

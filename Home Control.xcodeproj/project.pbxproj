@@ -22,6 +22,12 @@
 		3780F4E0207967DE00AFA224 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4DF207967DE00AFA224 /* WebService.swift */; };
 		3780F4E320796E4D00AFA224 /* SettingsInfoResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4E220796E4C00AFA224 /* SettingsInfoResource.swift */; };
 		3780F4E5207975AC00AFA224 /* ApiUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4E4207975AC00AFA224 /* ApiUrl.swift */; };
+		3780F4E920797B6900AFA224 /* SectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4E820797B6900AFA224 /* SectionsView.swift */; };
+		3780F4EC20797BA300AFA224 /* SectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4EB20797BA300AFA224 /* SectionsViewModel.swift */; };
+		3780F4F020797D3100AFA224 /* GetSectionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4EF20797D3100AFA224 /* GetSectionsUseCase.swift */; };
+		3780F4F220797D3800AFA224 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4F120797D3800AFA224 /* Section.swift */; };
+		3780F4F720797EB100AFA224 /* SectionsResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4F620797EB100AFA224 /* SectionsResource.swift */; };
+		3780F4FB207987B700AFA224 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4FA207987B700AFA224 /* RoomsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +48,12 @@
 		3780F4DF207967DE00AFA224 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		3780F4E220796E4C00AFA224 /* SettingsInfoResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoResource.swift; sourceTree = "<group>"; };
 		3780F4E4207975AC00AFA224 /* ApiUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrl.swift; sourceTree = "<group>"; };
+		3780F4E820797B6900AFA224 /* SectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsView.swift; sourceTree = "<group>"; };
+		3780F4EB20797BA300AFA224 /* SectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsViewModel.swift; sourceTree = "<group>"; };
+		3780F4EF20797D3100AFA224 /* GetSectionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSectionsUseCase.swift; sourceTree = "<group>"; };
+		3780F4F120797D3800AFA224 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		3780F4F620797EB100AFA224 /* SectionsResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsResource.swift; sourceTree = "<group>"; };
+		3780F4FA207987B700AFA224 /* RoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +86,8 @@
 		3780F4AE207505FD00AFA224 /* Home Control */ = {
 			isa = PBXGroup;
 			children = (
+				3780F4F8207987A600AFA224 /* Rooms */,
+				3780F4E620797B4F00AFA224 /* Sections */,
 				3780F4D72075682A00AFA224 /* Common */,
 				3780F4CD2075580600AFA224 /* Info */,
 				3780F4C720750D1A00AFA224 /* Extensions */,
@@ -182,6 +196,74 @@
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
+		3780F4E620797B4F00AFA224 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				3780F4F520797EA400AFA224 /* Infrastructure */,
+				3780F4ED20797D1700AFA224 /* Domain */,
+				3780F4EA20797B9700AFA224 /* Presentation */,
+				3780F4E720797B5700AFA224 /* UI */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		3780F4E720797B5700AFA224 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3780F4E820797B6900AFA224 /* SectionsView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3780F4EA20797B9700AFA224 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3780F4EB20797BA300AFA224 /* SectionsViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3780F4ED20797D1700AFA224 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3780F4EE20797D2200AFA224 /* UC */,
+				3780F4F120797D3800AFA224 /* Section.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3780F4EE20797D2200AFA224 /* UC */ = {
+			isa = PBXGroup;
+			children = (
+				3780F4EF20797D3100AFA224 /* GetSectionsUseCase.swift */,
+			);
+			path = UC;
+			sourceTree = "<group>";
+		};
+		3780F4F520797EA400AFA224 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				3780F4F620797EB100AFA224 /* SectionsResource.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		3780F4F8207987A600AFA224 /* Rooms */ = {
+			isa = PBXGroup;
+			children = (
+				3780F4F9207987AA00AFA224 /* UI */,
+			);
+			path = Rooms;
+			sourceTree = "<group>";
+		};
+		3780F4F9207987AA00AFA224 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3780F4FA207987B700AFA224 /* RoomsViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,15 +335,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3780F4E920797B6900AFA224 /* SectionsView.swift in Sources */,
 				3780F4CC2075343100AFA224 /* InfoViewModel.swift in Sources */,
 				3780F4E0207967DE00AFA224 /* WebService.swift in Sources */,
+				3780F4FB207987B700AFA224 /* RoomsViewController.swift in Sources */,
+				3780F4F720797EB100AFA224 /* SectionsResource.swift in Sources */,
 				3780F4C620750A6000AFA224 /* AppFlowController.swift in Sources */,
+				3780F4F220797D3800AFA224 /* Section.swift in Sources */,
+				3780F4F020797D3100AFA224 /* GetSectionsUseCase.swift in Sources */,
 				3780F4E5207975AC00AFA224 /* ApiUrl.swift in Sources */,
 				3780F4E320796E4D00AFA224 /* SettingsInfoResource.swift in Sources */,
 				3780F4D32075644C00AFA224 /* SettingsInfo.swift in Sources */,
 				3780F4DE2079649B00AFA224 /* Resource.swift in Sources */,
 				3780F4B0207505FD00AFA224 /* AppDelegate.swift in Sources */,
 				3780F4C42075065400AFA224 /* MainViewController.swift in Sources */,
+				3780F4EC20797BA300AFA224 /* SectionsViewModel.swift in Sources */,
 				3780F4DC20756C6800AFA224 /* Result.swift in Sources */,
 				3780F4D6207566EA00AFA224 /* GetSettingsInfoUseCase.swift in Sources */,
 				3780F4D02075582B00AFA224 /* InfoView.swift in Sources */,

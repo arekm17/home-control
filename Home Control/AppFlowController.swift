@@ -15,10 +15,23 @@ class AppFlowController {
     
     
     func setup() {
-        let useCase = GetSettingsInfoUseCase()
-        let vc = MainViewController(infoViewModel: InfoViewModel(getSettingsInfoUseCase: useCase))
+        let infoUseCase = GetSettingsInfoUseCase()
+        let infoVm = InfoViewModel(getSettingsInfoUseCase: infoUseCase)
+        
+        let sectionsUseCase = GetSectionsUseCase()
+        let sectionsVm = SectionsViewModel(getSectionsUseCase: sectionsUseCase)
+        
+        let vc = MainViewController(infoViewModel: infoVm, sectionsViewModel: sectionsVm)
+        vc.sectionsViewDelegate = self
         rootViewController.addChildViewController(vc)
     }
     
     
+}
+
+extension AppFlowController: SectionsViewDelgate {
+    func onSelectedSection(_ section: Section) {
+        let roomsViewController = RoomsViewController()
+        rootViewController.pushViewController(roomsViewController, animated: true)
+    }
 }

@@ -22,11 +22,17 @@ class MainViewController: UIViewController {
         return label
     }()
 
-    let sectionsTable = UITableView()
+    let sectionsView: SectionsView
     
+    var sectionsViewDelegate: SectionsViewDelgate? {
+        willSet(del) {
+            sectionsView.viewDelegate = del
+        }
+    }
     
-    init(infoViewModel: InfoViewModel) {
+    init(infoViewModel: InfoViewModel, sectionsViewModel: SectionsViewModel) {
         self.infoView = InfoView(viewModel: infoViewModel)
+        self.sectionsView = SectionsView(viewModel: sectionsViewModel)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -38,8 +44,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         setupView()
         setupConstraints()
-        
-        setupBindings()
     }
     
     func setupView() {
@@ -48,7 +52,7 @@ class MainViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(infoView)
         view.addSubview(sectionsLabel)
-        view.addSubview(sectionsTable)
+        view.addSubview(sectionsView)
 
     }
     
@@ -66,15 +70,12 @@ class MainViewController: UIViewController {
         sectionsLabel.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 40).isActive = true
         sectionsLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10).isActive = true
         
-        sectionsTable.translatesAutoresizingMaskIntoConstraints = false
-        sectionsTable.topAnchor.constraint(equalTo: sectionsLabel.bottomAnchor, constant: 20).isActive = true
-        sectionsTable.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
-        sectionsTable.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        sectionsTable.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        sectionsView.translatesAutoresizingMaskIntoConstraints = false
+        sectionsView.topAnchor.constraint(equalTo: sectionsLabel.bottomAnchor, constant: 20).isActive = true
+        sectionsView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
+        sectionsView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        sectionsView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
     }
-    
-    func setupBindings() {
-        
-    }
+   
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GetSettingsInfoUseCase {
+struct GetSettingsInfoUseCase {
     
     func execute(_ completion: @escaping ((SettingsInfo) -> ())) {
         
