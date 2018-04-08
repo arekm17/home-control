@@ -29,7 +29,6 @@ class BinaryDeviceTableViewCell: UITableViewCell {
     }
     
     func setupView() {
-        backgroundColor = .green
         
         self.addSubview(label)
         self.addSubview(switchButton)
@@ -53,6 +52,9 @@ class BinaryDeviceTableViewCell: UITableViewCell {
         self.viewModel = viewModel
         label.text = viewModel.label
         switchButton.setOn(viewModel.checked, animated: false)
+        viewModel.switchStateChanged = { [weak self] state in
+            self?.switchButton.setOn(state, animated: true)
+        }
     }
     
     @objc func switchChanged(sw: UISwitch) {

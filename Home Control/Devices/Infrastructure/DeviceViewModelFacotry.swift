@@ -15,7 +15,7 @@ class DeviceViewModelFacotry {
         if device.type == .binary_light {
             return BinaryLightDeviceViewModel(device, ChangeBinaryStateUseCase())
         } else {
-            return DimmableLightDeviceViewModel(device)
+            return DimmableLightDeviceViewModel(device, ChangeDimmableStateUseCase())
         }
     
     }

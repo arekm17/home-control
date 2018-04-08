@@ -46,6 +46,8 @@
 		3780F525207A479200AFA224 /* BinaryDeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F524207A479200AFA224 /* BinaryDeviceTableViewCell.swift */; };
 		3780F527207A54B800AFA224 /* ChangeBinaryStateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F526207A54B800AFA224 /* ChangeBinaryStateUseCase.swift */; };
 		3780F529207A569300AFA224 /* ChangeDeviceStateResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F528207A569300AFA224 /* ChangeDeviceStateResource.swift */; };
+		3780F52B207AB7A600AFA224 /* ChangeDimmableStateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F52A207AB7A600AFA224 /* ChangeDimmableStateUseCase.swift */; };
+		3780F52D207ABCA400AFA224 /* ChangeDeviceValueResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F52C207ABCA400AFA224 /* ChangeDeviceValueResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,8 @@
 		3780F524207A479200AFA224 /* BinaryDeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryDeviceTableViewCell.swift; sourceTree = "<group>"; };
 		3780F526207A54B800AFA224 /* ChangeBinaryStateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBinaryStateUseCase.swift; sourceTree = "<group>"; };
 		3780F528207A569300AFA224 /* ChangeDeviceStateResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDeviceStateResource.swift; sourceTree = "<group>"; };
+		3780F52A207AB7A600AFA224 /* ChangeDimmableStateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDimmableStateUseCase.swift; sourceTree = "<group>"; };
+		3780F52C207ABCA400AFA224 /* ChangeDeviceValueResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDeviceValueResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +387,7 @@
 			children = (
 				3780F511207A342400AFA224 /* GetDevicesUseCase.swift */,
 				3780F526207A54B800AFA224 /* ChangeBinaryStateUseCase.swift */,
+				3780F52A207AB7A600AFA224 /* ChangeDimmableStateUseCase.swift */,
 			);
 			path = UC;
 			sourceTree = "<group>";
@@ -394,6 +399,7 @@
 				3780F518207A423900AFA224 /* DeviceViewModelFacotry.swift */,
 				3780F51C207A444A00AFA224 /* DeviceCellSource.swift */,
 				3780F528207A569300AFA224 /* ChangeDeviceStateResource.swift */,
+				3780F52C207ABCA400AFA224 /* ChangeDeviceValueResource.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -491,6 +497,7 @@
 				3780F4D32075644C00AFA224 /* SettingsInfo.swift in Sources */,
 				3780F519207A423900AFA224 /* DeviceViewModelFacotry.swift in Sources */,
 				3780F523207A477700AFA224 /* DimmableDeviceTableViewCell.swift in Sources */,
+				3780F52B207AB7A600AFA224 /* ChangeDimmableStateUseCase.swift in Sources */,
 				3780F4DE2079649B00AFA224 /* Resource.swift in Sources */,
 				3780F51B207A42BE00AFA224 /* DeviceViewModel.swift in Sources */,
 				3780F4B0207505FD00AFA224 /* AppDelegate.swift in Sources */,
@@ -500,6 +507,7 @@
 				3780F50E207A15F400AFA224 /* DevicesViewController.swift in Sources */,
 				3780F4EC20797BA300AFA224 /* SectionsViewModel.swift in Sources */,
 				3780F4DC20756C6800AFA224 /* Result.swift in Sources */,
+				3780F52D207ABCA400AFA224 /* ChangeDeviceValueResource.swift in Sources */,
 				3780F4D6207566EA00AFA224 /* GetSettingsInfoUseCase.swift in Sources */,
 				3780F521207A455D00AFA224 /* DimmableLightDeviceViewModel.swift in Sources */,
 				3780F507207A107A00AFA224 /* RoomsResource.swift in Sources */,
