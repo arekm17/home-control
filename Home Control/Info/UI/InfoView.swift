@@ -73,29 +73,40 @@ class InfoView: UIView {
         let labelW = CGFloat(140)
         
         serialNoLabel.translatesAutoresizingMaskIntoConstraints = false
-        serialNoLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        serialNoLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        serialNoLabel.widthAnchor.constraint(equalToConstant: labelW).isActive = true
-        
+        NSLayoutConstraint.activate([
+            serialNoLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            serialNoLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            serialNoLabel.widthAnchor.constraint(equalToConstant: labelW)
+        ])
+            
         serialNo.translatesAutoresizingMaskIntoConstraints = false
-        serialNo.bottomAnchor.constraint(equalTo: serialNoLabel.bottomAnchor).isActive = true
-        serialNo.leadingAnchor.constraint(equalTo: serialNoLabel.trailingAnchor, constant: 10).isActive = true
-        serialNo.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            serialNo.bottomAnchor.constraint(equalTo: serialNoLabel.bottomAnchor),
+            serialNo.leadingAnchor.constraint(equalTo: serialNoLabel.trailingAnchor, constant: 10),
+            serialNo.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+        ])
         
         macAddrLabel.translatesAutoresizingMaskIntoConstraints = false
-        macAddrLabel.topAnchor.constraint(equalTo: serialNoLabel.bottomAnchor, constant: 20).isActive = true
-        macAddrLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        macAddrLabel.widthAnchor.constraint(equalToConstant: labelW).isActive = true
+        NSLayoutConstraint.activate([
+            macAddrLabel.topAnchor.constraint(equalTo: serialNoLabel.bottomAnchor, constant: 20),
+            macAddrLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            macAddrLabel.widthAnchor.constraint(equalToConstant: labelW)
+        ])
         
         macAddr.translatesAutoresizingMaskIntoConstraints = false
-        macAddr.bottomAnchor.constraint(equalTo: macAddrLabel.bottomAnchor).isActive = true
-        macAddr.leadingAnchor.constraint(equalTo: macAddrLabel.trailingAnchor, constant: 10).isActive = true
-        macAddr.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        
+        NSLayoutConstraint.activate([
+            macAddr.bottomAnchor.constraint(equalTo: macAddrLabel.bottomAnchor),
+            macAddr.leadingAnchor.constraint(equalTo: macAddrLabel.trailingAnchor, constant: 10),
+            macAddr.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+        ])
 
         softVerLabel.translatesAutoresizingMaskIntoConstraints = false
-        softVerLabel.topAnchor.constraint(equalTo: macAddrLabel.bottomAnchor, constant: 20).isActive = true
-        softVerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        softVerLabel.widthAnchor.constraint(equalToConstant: labelW).isActive = true
+        NSLayoutConstraint.activate([
+            softVerLabel.topAnchor.constraint(equalTo: macAddrLabel.bottomAnchor, constant: 20),
+            softVerLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            softVerLabel.widthAnchor.constraint(equalToConstant: labelW),
+        ])
         
         softVer.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

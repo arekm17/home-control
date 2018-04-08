@@ -28,6 +28,10 @@
 		3780F4F220797D3800AFA224 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4F120797D3800AFA224 /* Section.swift */; };
 		3780F4F720797EB100AFA224 /* SectionsResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4F620797EB100AFA224 /* SectionsResource.swift */; };
 		3780F4FB207987B700AFA224 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4FA207987B700AFA224 /* RoomsViewController.swift */; };
+		3780F4FE207A0C9600AFA224 /* RoomsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F4FD207A0C9600AFA224 /* RoomsViewModel.swift */; };
+		3780F501207A0D9F00AFA224 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F500207A0D9F00AFA224 /* Room.swift */; };
+		3780F504207A0F4C00AFA224 /* GetRoomsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F503207A0F4C00AFA224 /* GetRoomsUseCase.swift */; };
+		3780F507207A107A00AFA224 /* RoomsResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F506207A107A00AFA224 /* RoomsResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		3780F4F120797D3800AFA224 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		3780F4F620797EB100AFA224 /* SectionsResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsResource.swift; sourceTree = "<group>"; };
 		3780F4FA207987B700AFA224 /* RoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
+		3780F4FD207A0C9600AFA224 /* RoomsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewModel.swift; sourceTree = "<group>"; };
+		3780F500207A0D9F00AFA224 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		3780F503207A0F4C00AFA224 /* GetRoomsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRoomsUseCase.swift; sourceTree = "<group>"; };
+		3780F506207A107A00AFA224 /* RoomsResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +259,9 @@
 		3780F4F8207987A600AFA224 /* Rooms */ = {
 			isa = PBXGroup;
 			children = (
+				3780F505207A106400AFA224 /* Infrastructure */,
+				3780F4FF207A0D9800AFA224 /* Domain */,
+				3780F4FC207A0C7300AFA224 /* Presentation */,
 				3780F4F9207987AA00AFA224 /* UI */,
 			);
 			path = Rooms;
@@ -262,6 +273,39 @@
 				3780F4FA207987B700AFA224 /* RoomsViewController.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		3780F4FC207A0C7300AFA224 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3780F4FD207A0C9600AFA224 /* RoomsViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3780F4FF207A0D9800AFA224 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3780F502207A0F3E00AFA224 /* UC */,
+				3780F500207A0D9F00AFA224 /* Room.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3780F502207A0F3E00AFA224 /* UC */ = {
+			isa = PBXGroup;
+			children = (
+				3780F503207A0F4C00AFA224 /* GetRoomsUseCase.swift */,
+			);
+			path = UC;
+			sourceTree = "<group>";
+		};
+		3780F505207A106400AFA224 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				3780F506207A107A00AFA224 /* RoomsResource.swift */,
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +381,7 @@
 			files = (
 				3780F4E920797B6900AFA224 /* SectionsView.swift in Sources */,
 				3780F4CC2075343100AFA224 /* InfoViewModel.swift in Sources */,
+				3780F501207A0D9F00AFA224 /* Room.swift in Sources */,
 				3780F4E0207967DE00AFA224 /* WebService.swift in Sources */,
 				3780F4FB207987B700AFA224 /* RoomsViewController.swift in Sources */,
 				3780F4F720797EB100AFA224 /* SectionsResource.swift in Sources */,
@@ -349,11 +394,14 @@
 				3780F4DE2079649B00AFA224 /* Resource.swift in Sources */,
 				3780F4B0207505FD00AFA224 /* AppDelegate.swift in Sources */,
 				3780F4C42075065400AFA224 /* MainViewController.swift in Sources */,
+				3780F504207A0F4C00AFA224 /* GetRoomsUseCase.swift in Sources */,
 				3780F4EC20797BA300AFA224 /* SectionsViewModel.swift in Sources */,
 				3780F4DC20756C6800AFA224 /* Result.swift in Sources */,
 				3780F4D6207566EA00AFA224 /* GetSettingsInfoUseCase.swift in Sources */,
+				3780F507207A107A00AFA224 /* RoomsResource.swift in Sources */,
 				3780F4D02075582B00AFA224 /* InfoView.swift in Sources */,
 				3780F4C920750D3800AFA224 /* UILabel+Constructors.swift in Sources */,
+				3780F4FE207A0C9600AFA224 /* RoomsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

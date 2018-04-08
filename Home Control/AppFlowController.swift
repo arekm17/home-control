@@ -31,7 +31,11 @@ class AppFlowController {
 
 extension AppFlowController: SectionsViewDelgate {
     func onSelectedSection(_ section: Section) {
-        let roomsViewController = RoomsViewController()
+        let getRoomsUseCase = GetRoomsUseCase()
+        let roomsViewModel = RoomsViewModel(getRoomsUseCase: getRoomsUseCase)
+        let roomsViewController = RoomsViewController(viewModel: roomsViewModel)
+        roomsViewController.sectionId = section.id
+        
         rootViewController.pushViewController(roomsViewController, animated: true)
     }
 }

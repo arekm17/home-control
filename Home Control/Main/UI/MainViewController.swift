@@ -61,20 +61,27 @@ class MainViewController: UIViewController {
         let margins = view.layoutMarginsGuide
         
         infoView.translatesAutoresizingMaskIntoConstraints = false
-        infoView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 50).isActive = true
-        infoView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10).isActive = true
-        infoView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10).isActive = true
-        infoView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        
+        NSLayoutConstraint.activate([
+            infoView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 50),
+            infoView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10),
+            infoView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10),
+            infoView.heightAnchor.constraint(equalToConstant: 120)
+        ])
         
         sectionsLabel.translatesAutoresizingMaskIntoConstraints = false
-        sectionsLabel.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 40).isActive = true
-        sectionsLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10).isActive = true
+        NSLayoutConstraint.activate([
+            sectionsLabel.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 40),
+            sectionsLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10)
+        ])
         
         sectionsView.translatesAutoresizingMaskIntoConstraints = false
-        sectionsView.topAnchor.constraint(equalTo: sectionsLabel.bottomAnchor, constant: 20).isActive = true
-        sectionsView.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
-        sectionsView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        sectionsView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            sectionsView.topAnchor.constraint(equalTo: sectionsLabel.bottomAnchor, constant: 20),
+            sectionsView.bottomAnchor.constraint(equalTo: margins.bottomAnchor),
+            sectionsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            sectionsView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
         
     }
    
