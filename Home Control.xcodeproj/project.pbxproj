@@ -48,6 +48,7 @@
 		3780F529207A569300AFA224 /* ChangeDeviceStateResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F528207A569300AFA224 /* ChangeDeviceStateResource.swift */; };
 		3780F52B207AB7A600AFA224 /* ChangeDimmableStateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F52A207AB7A600AFA224 /* ChangeDimmableStateUseCase.swift */; };
 		3780F52D207ABCA400AFA224 /* ChangeDeviceValueResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3780F52C207ABCA400AFA224 /* ChangeDeviceValueResource.swift */; };
+		3780F531207AC81100AFA224 /* NetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3780F52F207AC81000AFA224 /* NetworkActivityIndicatorManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,9 @@
 		3780F528207A569300AFA224 /* ChangeDeviceStateResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDeviceStateResource.swift; sourceTree = "<group>"; };
 		3780F52A207AB7A600AFA224 /* ChangeDimmableStateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDimmableStateUseCase.swift; sourceTree = "<group>"; };
 		3780F52C207ABCA400AFA224 /* ChangeDeviceValueResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDeviceValueResource.swift; sourceTree = "<group>"; };
+		3780F52E207AC80F00AFA224 /* Home Control-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Home Control-Bridging-Header.h"; sourceTree = "<group>"; };
+		3780F52F207AC81000AFA224 /* NetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		3780F530207AC81100AFA224 /* NetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,10 +225,13 @@
 		3780F4D82075683300AFA224 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				3780F530207AC81100AFA224 /* NetworkActivityIndicatorManager.h */,
+				3780F52F207AC81000AFA224 /* NetworkActivityIndicatorManager.m */,
 				3780F4DB20756C6800AFA224 /* Result.swift */,
 				3780F4DD2079649B00AFA224 /* Resource.swift */,
 				3780F4DF207967DE00AFA224 /* WebService.swift */,
 				3780F4E4207975AC00AFA224 /* ApiConstants.swift */,
+				3780F52E207AC80F00AFA224 /* Home Control-Bridging-Header.h */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -436,6 +443,7 @@
 				TargetAttributes = {
 					3780F4AB207505FD00AFA224 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -476,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3780F4E920797B6900AFA224 /* SectionsView.swift in Sources */,
+				3780F531207AC81100AFA224 /* NetworkActivityIndicatorManager.m in Sources */,
 				3780F4CC2075343100AFA224 /* InfoViewModel.swift in Sources */,
 				3780F501207A0D9F00AFA224 /* Room.swift in Sources */,
 				3780F529207A569300AFA224 /* ChangeDeviceStateResource.swift in Sources */,
@@ -642,12 +651,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83239C6MR8;
 				INFOPLIST_FILE = "Home Control/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.arekm.Home-Control";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Home Control/Common/API/Home Control-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -657,12 +670,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83239C6MR8;
 				INFOPLIST_FILE = "Home Control/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.arekm.Home-Control";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Home Control/Common/API/Home Control-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

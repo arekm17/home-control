@@ -12,6 +12,7 @@ struct WebService<T> {
         
     static func getResource(_ resource: Resource<T>, _ completion: @escaping ((Result<T>) -> ())) {
 
+        
         let config = URLSessionConfiguration.default
         let userPasswordString = ApiConstants.auth
         let userPasswordData = userPasswordString.data(using: .utf8)
@@ -20,6 +21,8 @@ struct WebService<T> {
         config.httpAdditionalHeaders = ["Authorization" : authString]
         
         let task = URLSession(configuration: config).dataTask(with: resource.url) { (data, response, error) -> Void in
+            NetworkActivityIndicatorManager.shared().endActivity()
+
             if let error = error {
                 print("WebService call \(resource.url) error: \(error)")
                 completion(Result.Error(error))
@@ -46,6 +49,8 @@ struct WebService<T> {
             
         }
         
+        NetworkActivityIndicatorManager.shared().startActivity()
+
         task.resume()
     }
   

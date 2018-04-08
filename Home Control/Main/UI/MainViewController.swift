@@ -63,7 +63,7 @@ class MainViewController: UIViewController {
         infoView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            infoView.topAnchor.constraint(equalTo: margins.topAnchor, constant: 50),
+            infoView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 50),
             infoView.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10),
             infoView.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10),
             infoView.heightAnchor.constraint(equalToConstant: 120)

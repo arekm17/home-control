@@ -60,7 +60,6 @@ class DimmableDeviceTableViewCell: UITableViewCell {
     }
     
     func bind(viewModel: DimmableLightDeviceViewModel) {
-        unbind()
         self.viewModel = viewModel
         self.label.text = viewModel.label
         slider.setValue(viewModel.value, animated: false)
@@ -76,11 +75,6 @@ class DimmableDeviceTableViewCell: UITableViewCell {
         viewModel?.changeValue(Int(value))
     }
     
-    private func unbind() {
-        if let viewModel = viewModel {
-            
-        }
-    }
     
 
 }

@@ -18,7 +18,7 @@ struct GetDevicesUseCase {
                 case .Success(let devices):
                     let filtered = devices
                         .filter { $0.type == .binary_light || $0.type == .dimmable_light }
-                        .filter { $0.roomID == roomId}
+                        .filter { $0.roomID == roomId }
                     
                     completable(filtered)
                 case .Error:

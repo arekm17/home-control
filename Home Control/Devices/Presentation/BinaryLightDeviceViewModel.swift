@@ -12,10 +12,10 @@ class BinaryLightDeviceViewModel: DeviceViewModel {
  
     let changeBinaryStateUseCase: ChangeBinaryStateUseCase
     
-    var switchStateChanged: ((Bool) -> ())?
+    var switchStateChanged: (() -> ())?
     
     let label: String
-    let checked: Bool
+    var checked: Bool
     private let deviceId: Int
     
     init(_ device: Device, _ changeBinaryStateUseCase: ChangeBinaryStateUseCase) {
@@ -28,7 +28,10 @@ class BinaryLightDeviceViewModel: DeviceViewModel {
     
     func changeValue(_ on: Bool) {
         changeBinaryStateUseCase.execute(deviceId: deviceId, value: on) { [weak self] success in
-            self?.switchStateChanged?(success ? on : !on)
+            if (success) {
+                self?.checked = on
+            }
+            self?.switchStateChanged?()
         }
     }
     
