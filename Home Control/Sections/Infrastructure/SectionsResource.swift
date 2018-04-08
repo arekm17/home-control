@@ -10,7 +10,7 @@ import Foundation
 
 struct SectionsResource {
     
-    private static let url = URL(string: "\(ApiUrl.baseUrl)/api/sections")!
+    private static let url = URL(string: "\(ApiConstants.baseUrl)/api/sections")!
     
     static func getResource() -> Resource<[Section]> {
         return Resource<[Section]>(url: SectionsResource.url,

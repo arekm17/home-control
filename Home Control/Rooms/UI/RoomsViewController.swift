@@ -9,11 +9,16 @@
 import Foundation
 import UIKit
 
+protocol RoomsViewControllerDelegate: class {
+    func onRoomClicked(_ roomId: Int)
+}
+
 class RoomsViewController: UIViewController {
     
     private static let CellIdentifier = "Cell"
     
     let viewModel: RoomsViewModel
+    var delegate: RoomsViewControllerDelegate?
     
     var sectionId: Int?
     
@@ -83,6 +88,7 @@ extension RoomsViewController: UITableViewDataSource {
 extension RoomsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate?.onRoomClicked(viewModel.rooms[indexPath.row].id)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

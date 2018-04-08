@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct ApiUrl {
+struct ApiConstants {
 
     static let baseUrl = "http://styx.fibaro.com:9999"
 
+    static let auth = "admin:admin"
 }

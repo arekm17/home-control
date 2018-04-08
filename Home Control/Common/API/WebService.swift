@@ -13,7 +13,7 @@ struct WebService<T> {
     static func getResource(_ resource: Resource<T>, _ completion: @escaping ((Result<T>) -> ())) {
 
         let config = URLSessionConfiguration.default
-        let userPasswordString = "admin:admin"
+        let userPasswordString = ApiConstants.auth
         let userPasswordData = userPasswordString.data(using: .utf8)
         let base64EncodedCredential = userPasswordData!.base64EncodedString()
         let authString = "Basic \(base64EncodedCredential)"
@@ -30,21 +30,31 @@ struct WebService<T> {
                 return completion(Result.Error(NoDataError.Error))
             }
             
-            do {
-                let resultResource = try resource.parseMethod(data)
-                completion(Result.Success(resultResource))
-            } catch let error {
-                completion(Result.Error(error))
+            
+            let statusCode = (response as! HTTPURLResponse).statusCode
+            if statusCode == resource.exceptedStatus {
+                do {
+                    let resultResource = try resource.parseMethod(data)
+                    completion(Result.Success(resultResource))
+                } catch let error {
+                    completion(Result.Error(error))
+                }
+            } else {
+                completion(Result.Error(ResponseCodeError.Error(responseCode: statusCode)))
             }
+            
             
         }
         
         task.resume()
     }
-    
-    
+  
 }
 
 enum NoDataError: Error {
     case Error
+}
+
+enum ResponseCodeError: Error {
+    case Error(responseCode: Int)
 }

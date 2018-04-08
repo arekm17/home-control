@@ -10,7 +10,7 @@ import Foundation
 
 struct RoomsResource {
     
-    private static let url = URL(string: "\(ApiUrl.baseUrl)/api/rooms")!
+    private static let url = URL(string: "\(ApiConstants.baseUrl)/api/rooms")!
     
     static func getResource() -> Resource<[Room]> {
         

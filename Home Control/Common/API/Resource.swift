@@ -11,7 +11,16 @@ import Foundation
 
 struct Resource<T> {
     
+    typealias ParseMethod = ((Data) throws -> T)
+    
     let url: URL
-    let parseMethod: (Data) throws -> T 
+    let parseMethod: ParseMethod
+    let exceptedStatus: Int
+    
+    init(url: URL, parseMethod: @escaping ParseMethod, exceptedStatus: Int = 200) {
+        self.url = url
+        self.parseMethod = parseMethod
+        self.exceptedStatus = exceptedStatus
+    }
     
 }

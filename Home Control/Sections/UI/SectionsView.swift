@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol SectionsViewDelgate: class {
-    func onSelectedSection(_ section: Section)
+    func onSelectedSection(_ sectionId: Int)
 }
 
 class SectionsView: UITableView {
@@ -67,7 +67,7 @@ extension SectionsView: UITableViewDataSource {
 extension SectionsView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.viewDelegate?.onSelectedSection(viewModel.sections[indexPath.row])
+        self.viewDelegate?.onSelectedSection(viewModel.sections[indexPath.row].id)
         self.deselectRow(at: indexPath, animated: true)
     }
     

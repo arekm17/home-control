@@ -10,7 +10,7 @@ import Foundation
 
 struct SettingsInfoResource {
     
-    static let SettingsInfoUrl = URL(string: "\(ApiUrl.baseUrl)/api/settings/info")!
+    static let SettingsInfoUrl = URL(string: "\(ApiConstants.baseUrl)/api/settings/info")!
     
     
     static func getResource() -> Resource<SettingsInfo> {
